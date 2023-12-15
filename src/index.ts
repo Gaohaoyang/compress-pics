@@ -9,11 +9,11 @@ const prompt = promptSync()
 const init = async () => {
   tinify.key = 'YC4RydXcYxwqH101nCY66L9LM0Yk53s7'
 
-  const sizeBefore = getFileSizeInBytes('examples/images/coupon/Tntvip2023Zh.png')
+  const sizeBefore = getFileSizeInBytes('examples/images/coupon/profile_header.png')
   console.log(sizeBefore)
-  const source = tinify.fromFile('examples/images/coupon/Tntvip2023Zh.png')
-  await source.toFile('examples/images/coupon/Tntvip2023Zh.png')
-  const sizeAfter = getFileSizeInBytes('examples/images/coupon/Tntvip2023Zh.png')
+  const source = tinify.fromFile('examples/images/coupon/profile_header.png')
+  await source.toFile('examples/images/coupon/profile_header.png')
+  const sizeAfter = getFileSizeInBytes('examples/images/coupon/profile_header.png')
   console.log(sizeAfter)
   console.log('rate ', (sizeAfter - sizeBefore) / sizeBefore)
 
