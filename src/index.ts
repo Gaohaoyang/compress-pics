@@ -17,7 +17,6 @@ const init = async () => {
   // console.log(sizeAfter)
   // console.log('rate ', (sizeBefore - sizeAfter) / sizeBefore)
 
-
   // ---
   const folderPath = prompt('images folder path:', './examples/images')
   let size = 0
