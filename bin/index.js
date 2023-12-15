@@ -2,4 +2,4 @@
 
 console.log('Hello!')
 
-require('./dist/index.js')
+require('../dist/index.js')

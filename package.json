@@ -1,6 +1,6 @@
 {
   "name": "compress-pics",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "compress-pics with tinypng",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
