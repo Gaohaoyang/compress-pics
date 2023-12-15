@@ -1,0 +1,32 @@
+{
+  "name": "compress-pics",
+  "version": "1.0.0",
+  "description": "compress-pics with tinypng",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "start": "ts-node ./src/index.ts",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "compress",
+    "png",
+    "pics",
+    "pictures",
+    "tinypng",
+    "tinypng.com"
+  ],
+  "author": "Haoyang Gao",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.10.4",
+    "@types/prompt-sync": "^4.2.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "prompt-sync": "^4.2.0",
+    "tinify": "^1.7.1"
+  }
+}
