@@ -1,14 +1,11 @@
-import promptSync from 'prompt-sync'
 import tinify from 'tinify'
 import { getFolderPath } from './inputPath'
 import { getAllPicFiles } from './getAllPicFilesPath'
 import { brandAsciiCompressPics } from './brandAscii'
 import Table from 'cli-table'
 
-const prompt = promptSync()
-
 const init = async () => {
-  brandAsciiCompressPics()
+  // brandAsciiCompressPics()
   console.log()
   const { path } = await getFolderPath()
   console.log('Your images directory is:', path)
