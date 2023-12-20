@@ -22,14 +22,24 @@
   ],
   "author": "Haoyang Gao",
   "license": "MIT",
-  "devDependencies": {
+  "dependencies": {
     "@types/node": "^20.10.4",
     "@types/prompt-sync": "^4.2.3",
+    "chalk": "^5.3.0",
+    "cli-table": "^0.3.11",
+    "colorette": "^2.0.20",
+    "figlet": "^1.7.0",
+    "inquirer": "8.2.6",
+    "inquirer-fuzzy-path": "^2.3.0",
+    "prompt-sync": "^4.2.0",
+    "tinify": "^1.7.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   },
-  "dependencies": {
-    "prompt-sync": "^4.2.0",
-    "tinify": "^1.7.1"
+  "devDependencies": {
+    "@types/cli-table": "^0.3.4",
+    "@types/figlet": "^1.5.8",
+    "@types/inquirer": "^9.0.7",
+    "@types/inquirer-fuzzy-path": "^2.3.9"
   }
 }
