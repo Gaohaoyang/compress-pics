@@ -28,6 +28,7 @@
     "figlet": "^1.7.0",
     "inquirer": "8.2.6",
     "inquirer-fuzzy-path": "^2.3.0",
+    "inquirer-press-to-continue": "^1.2.0",
     "tinify": "^1.7.1"
   },
   "devDependencies": {

@@ -1,8 +1,9 @@
+import Table from 'cli-table'
 import tinify from 'tinify'
 import { getFolderPath } from './inputPath'
 import { getAllPicFiles } from './getAllPicFilesPath'
 import { brandAsciiCompressPics } from './brandAscii'
-import Table from 'cli-table'
+// import { pressAKeyToContinue } from './pressAKeyToContinue'
 
 const init = async () => {
   // brandAsciiCompressPics()
@@ -22,6 +23,9 @@ const init = async () => {
     ['Total size:', allPicFilesInfo.totalSizeMB + 'MB']
   )
   console.log(table.toString())
+
+  // const { key } = await pressAKeyToContinue()
+  // console.log('key', key)
 
   // console.log('allPicFilesInfo', allPicFilesInfo)
 
