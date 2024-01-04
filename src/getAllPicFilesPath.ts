@@ -1,5 +1,6 @@
 import fs from 'fs'
 import path from 'path'
+import Table from 'cli-table'
 
 interface PicFilesInfo {
   list: PicFile[]
@@ -7,35 +8,83 @@ interface PicFilesInfo {
   totalSizeMB: string
 }
 
-interface PicFile {
+export interface PicFile {
   filePath: string
   size: number
 }
 
 export const getAllPicFiles: (path: string) => Promise<PicFilesInfo> = async (path: string) => {
-  let totalSize = 0
-  const allPicFiles: PicFile[] = []
+  let canBeCompressedPicTotalSize = 0
+  let cannotBeCompressedPicFilesTotalSize = 0
+  // const allPicFiles: PicFile[] = []
+  const canBeCompressedPicFiles: PicFile[] = []
+  const cannotBeCompressedPicFiles: PicFile[] = []
   await walkSync(path, (filePath: string, dirent) => {
     if (
       dirent.name.endsWith('.png') ||
       dirent.name.endsWith('.jpg') ||
-      dirent.name.endsWith('.jpeg') ||
-      dirent.name.endsWith('.gif') ||
-      dirent.name.endsWith('.svg')
+      dirent.name.endsWith('.jpeg')
     ) {
       let size = getFileSizeInBytes(filePath)
-      allPicFiles.push({
+      canBeCompressedPicFiles.push({
         filePath,
         size,
       })
-      totalSize += size
+      canBeCompressedPicTotalSize += size
+    }
+
+    if (dirent.name.endsWith('.gif') || dirent.name.endsWith('.svg')) {
+      let size = getFileSizeInBytes(filePath)
+      cannotBeCompressedPicFiles.push({
+        filePath,
+        size,
+      })
+      cannotBeCompressedPicFilesTotalSize += size
     }
   })
 
+  const canBeCompressedPicTotalSizeMB = (canBeCompressedPicTotalSize / 1024 / 1024).toFixed(2)
+  const cannotBeCompressedPicFilesTotalSizeMB = (
+    cannotBeCompressedPicFilesTotalSize /
+    1024 /
+    1024
+  ).toFixed(2)
+
+  const table = new Table({
+    style: {
+      border: ['cyan'],
+      head: ['yellow'],
+    },
+    head: ['', 'Count', 'Size(MB)'],
+  })
+
+  table.push(
+    {
+      canBeCompressedPicFiles: [
+        String(canBeCompressedPicFiles.length),
+        canBeCompressedPicTotalSizeMB,
+      ],
+    },
+    {
+      cannotBeCompressedPicFiles: [
+        String(cannotBeCompressedPicFiles.length),
+        cannotBeCompressedPicFilesTotalSizeMB,
+      ],
+    }
+  )
+
+  console.log(table.toString())
+  console.log('Notice: Gif and svg files cannot be compressed.')
+  console.log(
+    'Total size:',
+    ((canBeCompressedPicTotalSize + cannotBeCompressedPicFilesTotalSize) / 1024 / 1024).toFixed(2) +
+      'MB'
+  )
+
   return {
-    list: allPicFiles,
-    totalSize,
-    totalSizeMB: (totalSize / 1024 / 1024).toFixed(2),
+    list: canBeCompressedPicFiles,
+    totalSize: canBeCompressedPicTotalSize,
+    totalSizeMB: canBeCompressedPicTotalSizeMB,
   }
 }
 

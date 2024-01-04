@@ -1,6 +1,6 @@
 {
   "name": "compress-pics",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "compress-pics with tinypng",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -28,7 +28,6 @@
     "figlet": "^1.7.0",
     "inquirer": "8.2.6",
     "inquirer-fuzzy-path": "^2.3.0",
-    "inquirer-press-to-continue": "^1.2.0",
     "tinify": "^1.7.1"
   },
   "devDependencies": {
@@ -37,7 +36,6 @@
     "@types/inquirer": "^9.0.7",
     "@types/inquirer-fuzzy-path": "^2.3.9",
     "@types/node": "^20.10.4",
-    "@types/prompt-sync": "^4.2.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   }
