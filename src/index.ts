@@ -5,6 +5,8 @@ import { brandAsciiCompressPics } from './brandAscii'
 import inquirer from 'inquirer'
 
 let path = ''
+let size = 0
+let sizeAfter = 0
 
 const init = async () => {
   brandAsciiCompressPics()
@@ -13,7 +15,7 @@ const init = async () => {
   console.log('Your images directory is:', path)
 
   const allPicFilesInfo = await getAllPicFiles(path)
-
+  size = allPicFilesInfo.totalSize
   await compressPicsList(allPicFilesInfo.list)
 }
 
@@ -33,8 +35,12 @@ const compressPicsList = async (list: PicFile[], startIndex = 0) => {
       await tinify.fromFile(list[i].filePath).toFile(list[i].filePath)
       // last one
       if (i === list.length - 1) {
-        console.log('Finished!')
-        await getAllPicFiles(path)
+        brandAsciiCompressPics('Finished', 'Standard')
+        const allPicFilesInfoAfter = await getAllPicFiles(path)
+        sizeAfter = allPicFilesInfoAfter.totalSize
+        console.log(
+          `The volume has decreased by ${(((size - sizeAfter) / size) * 100).toFixed(2)}% after compression`
+        )
       }
     } catch (err) {
       // https://tinypng.com/developers/reference/nodejs#error-handling
