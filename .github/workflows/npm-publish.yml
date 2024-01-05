@@ -16,6 +16,8 @@ jobs:
       - name: Check if version updated
         uses: MontyD/package-json-updated-action
         id: version-updated
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # 检查仓库以便作业能正常访问
       - name: Setup repo
         uses: actions/checkout@v4
