@@ -37,7 +37,10 @@ const compressPicsList = async (list: PicFile[], startIndex = 0) => {
       await tinify.fromFile(list[i].filePath).toFile(list[i].filePath)
       // last one
       if (i === list.length - 1) {
-        brandAsciiCompressPics('Finished', 'Standard')
+        brandAsciiCompressPics({
+          text: 'Finished',
+          font: 'Standard',
+        })
         const allPicFilesInfoAfter = await getAllPicFiles(path)
         sizeAfter = allPicFilesInfoAfter.totalSize
         console.log(

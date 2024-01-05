@@ -1,8 +1,27 @@
-# compress-pics
+<p align="center">
+  <img src="./assets/logo.png" alt="Compress Pics Logo" width="400"/>
+</p>
+
+![GitHub License](https://img.shields.io/github/license/gaohaoyang/compress-pics?color=blue) ![npm](https://img.shields.io/npm/v/compress-pics) ![GitHub issues](https://img.shields.io/github/issues/gaohaoyang/compress-pics) ![GitHub pull requests](https://img.shields.io/github/issues-pr/gaohaoyang/compress-pics)
 
 A command-line tool that uses the tinyPNG API to compress images. It simplifies the process of batch compressing images with tinyPNG in any directory of your project.
 
 Of course, you need to apply a tinyPNG API Key first, it's free.
+
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [Install](#install)
+- [Usage](#usage)
+- [Additional information](#additional-information)
+  - [What if it show an error while compressing?](#what-if-it-show-an-error-while-compressing)
+- [Contribution](#contribution)
+
+<!-- /code_chunk_output -->
+
+
 
 ## Install
 
@@ -43,23 +62,19 @@ yarn compress-pics
 Then, you will see the following prompt:
 
 ```bash
-.oPYo.                                                     .oPYo.  o
-8    8                                                     8    8
-8      .oPYo. ooYoYo. .oPYo. oPYo. .oPYo. .oPYo. .oPYo.   o8YooP' o8 .oPYo. .oPYo.
-8      8    8 8' 8  8 8    8 8  `' 8oooo8 Yb..   Yb..      8       8 8    ' Yb..
-8    8 8    8 8  8  8 8    8 8     8.       'Yb.   'Yb.    8       8 8    .   'Yb.
-`YooP' `YooP' 8  8  8 8YooP' 8     `Yooo' `YooP' `YooP'    8       8 `YooP' `YooP'
-:.....::.....:..:..:..8 ....:..:::::.....::.....::.....::::..::::::..:.....::.....:
-::::::::::::::::::::::8 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-::::::::::::::::::::::..:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+   ____                                                ____   _
+  / ___| ___   _ __ ___   _ __   _ __  ___  ___  ___  |  _ \ (_)  ___  ___
+ | |    / _ \ | '_ ` _ \ | '_ \ | '__|/ _ \/ __|/ __| | |_) || | / __|/ __|
+ | |___| (_) || | | | | || |_) || |  |  __/\__ \\__ \ |  __/ | || (__ \__ \
+  \____|\___/ |_| |_| |_|| .__/ |_|   \___||___/|___/ |_|    |_| \___||___/
+                         |_|
 
 ? Select your images directory: (Use arrow keys or type to search)
 ❯ ./
   assets
   bin
   dist
-  examples
-  examples/images
+  src
 ```
 
 After selecting the image directory, you will see the following prompt:
@@ -67,42 +82,43 @@ After selecting the image directory, you will see the following prompt:
 ```bash
 ? Select your images directory: assets
 Your images directory is: assets
-┌────────────────────────────┬───────┬──────────┐
-│                            │ Count │ Size(MB) │
-├────────────────────────────┼───────┼──────────┤
-│ canBeCompressedPicFiles    │ 1     │ 0.03     │
-├────────────────────────────┼───────┼──────────┤
-│ cannotBeCompressedPicFiles │ 0     │ 0.00     │
-└────────────────────────────┴───────┴──────────┘
+┌────────────────────────────┬───────┬──────────┬─────────────┐
+│                            │ Count │ Size(MB) │ Size(Bytes) │
+├────────────────────────────┼───────┼──────────┼─────────────┤
+│ canBeCompressedPicFiles    │ 2     │ 0.19     │ 202319      │
+├────────────────────────────┼───────┼──────────┼─────────────┤
+│ cannotBeCompressedPicFiles │ 0     │ 0.00     │ 0           │
+└────────────────────────────┴───────┴──────────┴─────────────┘
 Notice: Gif and svg files cannot be compressed.
-Total size: 0.03MB
+Total size(MB): 0.19MB
+Total size(Bytes): 202319
 ? Please input a valid tinypng api key to continue ( You can find it at Tiny.com API ):
 ```
 
 After entering the tinyPNG API Key, the compression will start automatically.
 
 ```bash
-? Please input a valid tinypng api key to continue ( You can find it at Tiny.com API ): YOUR_API_KEY_HERE
-processing:  1 / 1 assets/continue.png
-  _____ _       _     _              _
- |  ___(_)_ __ (_)___| |__   ___  __| |
- | |_  | | '_ \| / __| '_ \ / _ \/ _` |
- |  _| | | | | | \__ \ | | |  __/ (_| |
- |_|   |_|_| |_|_|___/_| |_|\___|\__,_|
+? Please input a valid tinypng api key to continue ( You can find it at Tiny.com API ):  YOUR_API_KEY_HERE
+processing:  1 / 2 assets/continue.png
+processing:  2 / 2 assets/logo.png
+  _____  _         _       _                _
+ |  ___|(_) _ __  (_) ___ | |__    ___   __| |
+ | |_   | || '_ \ | |/ __|| '_ \  / _ \ / _` |
+ |  _|  | || | | || |\__ \| | | ||  __/| (_| |
+ |_|    |_||_| |_||_||___/|_| |_| \___| \__,_|
 
-┌────────────────────────────┬───────┬──────────┐
-│                            │ Count │ Size(MB) │
-├────────────────────────────┼───────┼──────────┤
-│ canBeCompressedPicFiles    │ 1     │ 0.02     │
-├────────────────────────────┼───────┼──────────┤
-│ cannotBeCompressedPicFiles │ 0     │ 0.00     │
-└────────────────────────────┴───────┴──────────┘
+┌────────────────────────────┬───────┬──────────┬─────────────┐
+│                            │ Count │ Size(MB) │ Size(Bytes) │
+├────────────────────────────┼───────┼──────────┼─────────────┤
+│ canBeCompressedPicFiles    │ 2     │ 0.06     │ 59916       │
+├────────────────────────────┼───────┼──────────┼─────────────┤
+│ cannotBeCompressedPicFiles │ 0     │ 0.00     │ 0           │
+└────────────────────────────┴───────┴──────────┴─────────────┘
 Notice: Gif and svg files cannot be compressed.
-Total size: 0.02MB
-The total size has decreased by 24.37% after compression.
-
-
-
+Total size(MB): 0.06MB
+Total size(Bytes): 59916
+================================================================================
+The total size has decreased by 70.39% after compression.
 ```
 
 ## Additional information

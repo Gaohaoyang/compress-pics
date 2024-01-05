@@ -40,5 +40,13 @@
     "@types/node": "^20.10.4",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gaohaoyang/compress-pics.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Gaohaoyang/compress-pics/issues"
+  },
+  "homepage": "https://github.com/Gaohaoyang/compress-pics"
 }
