@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check if version updated
-        uses: MontyD/package-json-updated-action
+        uses: MontyD/package-json-updated-action@1.0.1
         id: version-updated
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
