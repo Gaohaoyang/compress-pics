@@ -142,4 +142,4 @@ If you have any questions or suggestions, please feel free to open an [issue](ht
 
 Enjoy it! :smile:
 
-Have a nice day!!!
+Have a nice day!
