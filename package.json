@@ -11,7 +11,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "compressPics": "./bin/index.js"
+    "compress-pics": "./bin/index.js"
   },
   "keywords": [
     "compress",
@@ -29,6 +29,7 @@
     "figlet": "^1.7.0",
     "inquirer": "8.2.6",
     "inquirer-fuzzy-path": "^2.3.0",
+    "terminal-link": "^2.1.1",
     "tinify": "^1.7.1"
   },
   "devDependencies": {

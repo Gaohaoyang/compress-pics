@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import Table from 'cli-table'
+import { bold, cyan } from 'colorette'
 
 interface PicFilesInfo {
   list: PicFile[]
@@ -55,7 +56,7 @@ export const getAllPicFiles: (path: string) => Promise<PicFilesInfo> = async (pa
       border: ['cyan'],
       head: ['yellow'],
     },
-    head: ['', 'Count', 'Size(MB)'],
+    head: ['', 'Count', 'Size(MB)', 'Size(Bytes)'],
   })
 
   table.push(
@@ -63,12 +64,14 @@ export const getAllPicFiles: (path: string) => Promise<PicFilesInfo> = async (pa
       canBeCompressedPicFiles: [
         String(canBeCompressedPicFiles.length),
         canBeCompressedPicTotalSizeMB,
+        String(canBeCompressedPicTotalSize),
       ],
     },
     {
       cannotBeCompressedPicFiles: [
         String(cannotBeCompressedPicFiles.length),
         cannotBeCompressedPicFilesTotalSizeMB,
+        String(cannotBeCompressedPicFilesTotalSize),
       ],
     }
   )
@@ -76,9 +79,18 @@ export const getAllPicFiles: (path: string) => Promise<PicFilesInfo> = async (pa
   console.log(table.toString())
   console.log('Notice: Gif and svg files cannot be compressed.')
   console.log(
-    'Total size:',
-    ((canBeCompressedPicTotalSize + cannotBeCompressedPicFilesTotalSize) / 1024 / 1024).toFixed(2) +
-      'MB'
+    bold(cyan('Total size(MB):')),
+    bold(
+      cyan(
+        ((canBeCompressedPicTotalSize + cannotBeCompressedPicFilesTotalSize) / 1024 / 1024).toFixed(
+          2
+        ) + 'MB'
+      )
+    )
+  )
+  console.log(
+    cyan('Total size(Bytes):'),
+    cyan(canBeCompressedPicTotalSize + cannotBeCompressedPicFilesTotalSize)
   )
 
   return {

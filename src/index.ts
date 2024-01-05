@@ -3,6 +3,8 @@ import { getFolderPath } from './inputPath'
 import { getAllPicFiles, PicFile } from './getAllPicFilesPath'
 import { brandAsciiCompressPics } from './brandAscii'
 import inquirer from 'inquirer'
+import terminalLink from 'terminal-link'
+import { cyan, bold, green } from 'colorette'
 
 let path = ''
 let size = 0
@@ -20,11 +22,11 @@ const init = async () => {
 }
 
 const compressPicsList = async (list: PicFile[], startIndex = 0) => {
+  const link = terminalLink('Tiny.com API', 'https://tinify.com/dashboard/api')
   const answers = await inquirer.prompt([
     {
       name: 'tinypngApi',
-      message:
-        'Please input a valid tinypng api key to continue ( You can find at https://tinify.com/dashboard/api ): ',
+      message: `Please input a valid tinypng api key to continue ( You can find it at ${link} ): `,
     },
   ])
   tinify.key = answers.tinypngApi
@@ -39,7 +41,16 @@ const compressPicsList = async (list: PicFile[], startIndex = 0) => {
         const allPicFilesInfoAfter = await getAllPicFiles(path)
         sizeAfter = allPicFilesInfoAfter.totalSize
         console.log(
-          `The volume has decreased by ${(((size - sizeAfter) / size) * 100).toFixed(2)}% after compression`
+          green('================================================================================')
+        )
+        console.log(
+          bold(
+            cyan(
+              `The total size has decreased by ${(((size - sizeAfter) / size) * 100).toFixed(
+                2
+              )}% after compression.`
+            )
+          )
         )
       }
     } catch (err) {
