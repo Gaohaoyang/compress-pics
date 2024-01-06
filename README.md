@@ -2,7 +2,7 @@
   <img src="./assets/logo.png" alt="Compress Pics Logo" width="400"/>
 </p>
 
-![GitHub License](https://img.shields.io/github/license/gaohaoyang/compress-pics?color=blue) ![npm](https://img.shields.io/npm/v/compress-pics) ![GitHub issues](https://img.shields.io/github/issues/gaohaoyang/compress-pics) ![GitHub pull requests](https://img.shields.io/github/issues-pr/gaohaoyang/compress-pics)
+[![GitHub License](https://img.shields.io/github/license/gaohaoyang/compress-pics?color=blue)](https://github.com/Gaohaoyang/compress-pics/blob/main/LICENSE) [![npm](https://img.shields.io/npm/v/compress-pics)](https://www.npmjs.com/package/compress-pics) [![GitHub issues](https://img.shields.io/github/issues/gaohaoyang/compress-pics)](https://github.com/Gaohaoyang/compress-pics/issues) [![GitHub pull requests](https://img.shields.io/github/issues-pr/gaohaoyang/compress-pics)](https://github.com/Gaohaoyang/compress-pics/pulls)
 
 A command-line tool that uses the tinyPNG API to compress images. It simplifies the process of batch compressing images with tinyPNG in any directory of your project.
 
@@ -61,7 +61,7 @@ yarn compress-pics
 
 Then, you will see the following prompt:
 
-```bash
+```
    ____                                                ____   _
   / ___| ___   _ __ ___   _ __   _ __  ___  ___  ___  |  _ \ (_)  ___  ___
  | |    / _ \ | '_ ` _ \ | '_ \ | '__|/ _ \/ __|/ __| | |_) || | / __|/ __|
@@ -79,7 +79,7 @@ Then, you will see the following prompt:
 
 After selecting the image directory, you will see the following prompt:
 
-```bash
+```
 ? Select your images directory: assets
 Your images directory is: assets
 ┌────────────────────────────┬───────┬──────────┬─────────────┐
@@ -97,7 +97,7 @@ Total size(Bytes): 202319
 
 After entering the tinyPNG API Key, the compression will start automatically.
 
-```bash
+```
 ? Please input a valid tinypng api key to continue ( You can find it at Tiny.com API ):  YOUR_API_KEY_HERE
 processing:  1 / 2 assets/continue.png
 processing:  2 / 2 assets/logo.png
@@ -127,7 +127,7 @@ The total size has decreased by 70.39% after compression.
 
 Most of the time, it's because you have exceeded the monthly limit of tinyPNG. You can use another API Key to continue. Like below:
 
-```bash
+```
 processing:  72 / 123 src/images/payWays/master.png
 processing:  73 / 123 src/images/payWays/p30_promo_banner_en.png
 The error message is: Your monthly limit has been exceeded. (HTTP 429/TooManyRequests)
