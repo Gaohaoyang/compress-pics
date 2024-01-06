@@ -39,3 +39,6 @@ jobs:
         env:
           # npm_token 就是刚刚填写 token 时取的名字
           NODE_AUTH_TOKEN: ${{ secrets.NPMPUBHAOYANG }}
+      - name: Create a tag
+        uses: salsify/action-detect-and-tag-new-version@v2
+        if: steps.version-updated.outputs.has-updated
