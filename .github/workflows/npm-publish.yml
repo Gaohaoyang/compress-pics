@@ -41,3 +41,4 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPMPUBHAOYANG }}
       - name: Create a tag
         uses: salsify/action-detect-and-tag-new-version@v2
+        if: steps.version-updated.outputs.has-updated
