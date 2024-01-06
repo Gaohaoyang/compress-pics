@@ -22,6 +22,8 @@ jobs:
       - name: Setup repo
         uses: actions/checkout@v4
         if: steps.version-updated.outputs.has-updated
+        with:
+          fetch-depth: 2
       # Setup .npmrc file to publish to npm
       - name: Node env setup
         uses: actions/setup-node@v4
