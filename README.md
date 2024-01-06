@@ -127,7 +127,7 @@ The total size has decreased by 70.39% after compression.
 
 Most of the time, it's because you have exceeded the monthly limit of tinyPNG. You can use another API Key to continue. Like below:
 
-```bash
+```
 processing:  72 / 123 src/images/payWays/master.png
 processing:  73 / 123 src/images/payWays/p30_promo_banner_en.png
 The error message is: Your monthly limit has been exceeded. (HTTP 429/TooManyRequests)
