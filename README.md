@@ -35,6 +35,12 @@ or
 yarn add compress-pics -D
 ```
 
+or
+
+```bash
+pnpm i compress-pics -D
+```
+
 ## Usage
 
 In your `package.json` file, add the following script:
