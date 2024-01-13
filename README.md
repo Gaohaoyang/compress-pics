@@ -98,13 +98,13 @@ Your images directory is: assets
 Notice: Gif and svg files cannot be compressed.
 Total size(MB): 0.19MB
 Total size(Bytes): 202319
-? Please input a valid tinypng api key to continue ( You can find it at Tiny.com API ):
+? Please input a valid tinypng api key to continue ( You can find it at https://tinify.com/dashboard/api ):
 ```
 
 After entering the tinyPNG API Key, the compression will start automatically.
 
 ```
-? Please input a valid tinypng api key to continue ( You can find it at Tiny.com API ):  YOUR_API_KEY_HERE
+? Please input a valid tinypng api key to continue ( You can find it at https://tinify.com/dashboard/api ):  YOUR_API_KEY_HERE
 processing:  1 / 2 assets/continue.png
 processing:  2 / 2 assets/logo.png
   _____  _         _       _                _
