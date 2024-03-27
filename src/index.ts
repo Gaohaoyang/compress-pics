@@ -25,7 +25,7 @@ const compressPicsList = async (list: PicFile[], startIndex = 0) => {
   const link = terminalLink('Tiny.com API', 'https://tinify.com/dashboard/api')
   const answers = await inquirer.prompt([
     {
-      name: 'https://tinify.com/dashboard/api',
+      name: 'tinypngApi',
       message: `Please input a valid tinypng api key to continue ( You can find it at ${link} ): `,
     },
   ])
