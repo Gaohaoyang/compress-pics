@@ -6,8 +6,9 @@
 
 A command-line tool that uses the tinyPNG API to compress images. It simplifies the process of batch compressing images with tinyPNG in any directory of your project.
 
-Of course, you need to apply a tinyPNG API Key first, it's free.
+Of course, you need to apply a tinyPNG API Key first, it's free and convenient.
 
+![](./assets/compress-pics.png)
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
