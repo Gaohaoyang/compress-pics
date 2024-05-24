@@ -7,22 +7,7 @@ settings:
 importers:
 
   .:
-    devDependencies:
-      '@types/cli-table':
-        specifier: ^0.3.4
-        version: 0.3.4
-      '@types/figlet':
-        specifier: ^1.5.8
-        version: 1.5.8
-      '@types/inquirer':
-        specifier: ^9.0.7
-        version: 9.0.7
-      '@types/inquirer-fuzzy-path':
-        specifier: ^2.3.9
-        version: 2.3.9
-      '@types/node':
-        specifier: ^20.10.4
-        version: 20.11.0
+    dependencies:
       cli-table:
         specifier: ^0.3.11
         version: 0.3.11
@@ -44,6 +29,22 @@ importers:
       tinify:
         specifier: ^1.7.1
         version: 1.7.1
+    devDependencies:
+      '@types/cli-table':
+        specifier: ^0.3.4
+        version: 0.3.4
+      '@types/figlet':
+        specifier: ^1.5.8
+        version: 1.5.8
+      '@types/inquirer':
+        specifier: ^9.0.7
+        version: 9.0.7
+      '@types/inquirer-fuzzy-path':
+        specifier: ^2.3.9
+        version: 2.3.9
+      '@types/node':
+        specifier: ^20.10.4
+        version: 20.11.0
       ts-node:
         specifier: ^10.9.2
         version: 10.9.2(@types/node@20.11.0)(typescript@5.3.3)
