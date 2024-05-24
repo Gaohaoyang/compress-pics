@@ -1,6 +1,6 @@
 {
   "name": "compress-pics",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "A command-line tool that uses the tinyPNG API to compress images. It simplifies the process of batch compressing images with tinyPNG in any directory of your project.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -86,21 +86,19 @@
   ],
   "author": "Haoyang Gao",
   "license": "MIT",
-  "dependencies": {
-    "cli-table": "^0.3.11",
-    "colorette": "^2.0.20",
-    "figlet": "^1.7.0",
-    "inquirer": "8.2.6",
-    "inquirer-fuzzy-path": "^2.3.0",
-    "terminal-link": "^2.1.1",
-    "tinify": "^1.7.1"
-  },
   "devDependencies": {
     "@types/cli-table": "^0.3.4",
     "@types/figlet": "^1.5.8",
     "@types/inquirer": "^9.0.7",
     "@types/inquirer-fuzzy-path": "^2.3.9",
     "@types/node": "^20.10.4",
+    "cli-table": "^0.3.11",
+    "colorette": "^2.0.20",
+    "figlet": "^1.7.0",
+    "inquirer": "8.2.6",
+    "inquirer-fuzzy-path": "^2.3.0",
+    "terminal-link": "^2.1.1",
+    "tinify": "^1.7.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   },

@@ -22,7 +22,11 @@ const init = async () => {
 }
 
 const compressPicsList = async (list: PicFile[], startIndex = 0) => {
-  const link = terminalLink('Tiny.com API', 'https://tinify.com/dashboard/api')
+  const link = terminalLink('Tiny.com API', 'https://tinify.com/dashboard/api', {
+    fallback(text, url) {
+      return `${text} ${url}`
+    },
+  })
   const answers = await inquirer.prompt([
     {
       name: 'tinypngApi',
@@ -44,16 +48,16 @@ const compressPicsList = async (list: PicFile[], startIndex = 0) => {
         const allPicFilesInfoAfter = await getAllPicFiles(path)
         sizeAfter = allPicFilesInfoAfter.totalSize
         console.log(
-          green('================================================================================')
+          green('================================================================================'),
         )
         console.log(
           bold(
             cyan(
               `The total size has decreased by ${(((size - sizeAfter) / size) * 100).toFixed(
-                2
-              )}% after compression.`
-            )
-          )
+                2,
+              )}% after compression.`,
+            ),
+          ),
         )
       }
     } catch (err) {
