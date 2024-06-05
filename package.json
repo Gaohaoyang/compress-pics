@@ -1,6 +1,6 @@
 {
   "name": "compress-pics",
-  "version": "1.1.22",
+  "version": "1.1.24",
   "description": "A command-line tool that uses the tinyPNG API to compress images. It simplifies the process of batch compressing images with tinyPNG in any directory of your project.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

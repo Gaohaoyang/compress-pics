@@ -53,3 +53,8 @@ jobs:
       - name: Create a tag
         uses: salsify/action-detect-and-tag-new-version@v2
         if: steps.check.outputs.changed == 'true'
+
+      - run: npx changelogithub
+        if: steps.check.outputs.changed == 'true'
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
