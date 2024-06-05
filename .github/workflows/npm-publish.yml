@@ -27,6 +27,8 @@ jobs:
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4
+        with:
+          version: latest
         if: steps.version-updated.outputs.has-updated
 
       - name: Node env setup
