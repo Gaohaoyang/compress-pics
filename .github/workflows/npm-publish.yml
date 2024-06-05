@@ -16,17 +16,14 @@ jobs:
     # 指定操作系统为'ubuntu-latest'
     runs-on: ubuntu-latest
     steps:
+      - name: Setup repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
       - name: Version Check
         id: check
         uses: EndBug/version-check@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Setup repo
-        uses: actions/checkout@v4
-        if: steps.check.outputs.changed == 'true'
-        with:
-          fetch-depth: 2
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4
