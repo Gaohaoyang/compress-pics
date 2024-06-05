@@ -10,6 +10,9 @@ on:
 # 一个 workflow 可以有多个 job
 jobs:
   build:
+    permissions:
+      id-token: write
+      contents: write
     # 指定操作系统为'ubuntu-latest'
     runs-on: ubuntu-latest
     steps:
