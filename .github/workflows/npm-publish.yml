@@ -19,6 +19,8 @@ jobs:
       - name: Version Check
         id: check
         uses: EndBug/version-check@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup repo
         uses: actions/checkout@v4
